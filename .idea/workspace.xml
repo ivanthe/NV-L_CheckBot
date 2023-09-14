@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6ca1969-6539-4fd2-8f7f-be0059a5dd65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/NV-L_CheckBot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/datafile.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locators/page_locators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/data_methods.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/data_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/site_pages.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/xlxs_methods.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_main_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/styles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/xlxs_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/xlxs_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_main_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_main_file.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +39,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "temp__branch",
     "last_opened_file_path": "C:/Users/User/QATEST/NV-L_CheckBot"
   }
 }]]></component>
@@ -62,6 +50,20 @@
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Python tests for test_main_file.Test_Main.test_get_price">
+    <configuration name="Python tests for test_main_file.Test_Main.test_debug" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="NV-L_CheckBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_main_file.Test_Main.test_debug&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_main_file.Test_Main.test_get_price" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="NV-L_CheckBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,20 +75,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_main_file.Test_Main.test_get_price&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_tagler_brand.Test_MM_135_Stirrer.test_debug" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="NV-L_CheckBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_tagler_brand.Test_MM_135_Stirrer.test_debug&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -163,8 +151,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for test_main_file.Test_Main.test_get_price" />
+        <item itemvalue="Python tests.Python tests for test_main_file.Test_Main.test_debug" />
         <item itemvalue="Python tests.Python tests for tests.test_main_file.Test_Main.test_get_price" />
-        <item itemvalue="Python tests.Python tests for tests.test_main_file" />
         <item itemvalue="Python tests.Python tests for tests.test_main_file" />
         <item itemvalue="Python tests.Python tests for tests.test_main_file" />
       </list>
