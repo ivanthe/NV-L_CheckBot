@@ -35,3 +35,14 @@ class GeneralMethods(BasePage):
                 current_price = current_price + char
         print('Цена на сайте   ', current_price)
         return current_price
+
+    def get_data(self, datafile, result_data):
+        for i in range(2, datafile.max_row+1):
+            company_name = datafile.cell(row=i, column=1).value
+            goods_name = datafile.cell(row=i, column=2).value
+            current_url = datafile.cell(row=i, column=3).value
+            self.open(current_url)
+            current_locator = self.get_locator(current_url)
+            price = self.get_price(current_locator)
+            result_data.append([company_name, goods_name, price, current_url])
+        return result_data

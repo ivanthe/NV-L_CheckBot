@@ -35,11 +35,12 @@ def first_row_border_style():
         cell_alignment_vertical='center'
     )
 
+
 def default_row_border_style():
     yield BorderStyle(
         cell_width=20,
         cell_height=40,
-        cell_border_style="thick",
+        cell_border_style="thin",
         cell_border_color="000000",
         cell_alignment_horizontal='center',
         cell_alignment_vertical='center'
