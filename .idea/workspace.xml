@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6ca1969-6539-4fd2-8f7f-be0059a5dd65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/debug" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/debug and tests/debug_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/xlsx_resulting_table_methods.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/styles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/site_pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/site_pages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/xlxs_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/xlsx_proccessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_main_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_main_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug and tests/debug_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug and tests/debug_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/data_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/data_methods.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +62,20 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for debug_file.test_sort" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="NV-L_CheckBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/debug and tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;debug_file.test_sort&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_main_file.TestMain.test_debug" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="NV-L_CheckBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,20 +101,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_main_file.TestMain.test_get_price&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_main_file.Test_Main.test_debug" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="NV-L_CheckBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_main_file.Test_Main.test_debug&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -156,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for test_main_file.TestMain.test_get_price" />
+        <item itemvalue="Python tests.Python tests for debug_file.test_sort" />
         <item itemvalue="Python tests.Python tests for test_main_file.TestMain.test_debug" />
         <item itemvalue="Python tests.Python tests for debug_file.test_debug" />
         <item itemvalue="Python tests.Python tests for test_main_file.Test_Main.test_get_price" />
-        <item itemvalue="Python tests.Python tests for test_main_file.Test_Main.test_debug" />
       </list>
     </recent_temporary>
   </component>

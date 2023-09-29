@@ -12,8 +12,6 @@ class GeneralMethods(BasePage):
 
     def get_locator(self, url):
         site_title = url.split('://')[-1].split('/')[0]
-        print(url)
-        print(site_title)
 
         if site_title == 'www.nv-lab.ru' or site_title == 'nv-lab.ru':
             return self.locator.NV_LAB_OPTPRICE
@@ -33,7 +31,6 @@ class GeneralMethods(BasePage):
         for char in price_from_site:
             if char.isdigit():
                 current_price = current_price + char
-        print('Цена на сайте   ', current_price)
         return current_price
 
     def get_data(self, datafile, result_data):
