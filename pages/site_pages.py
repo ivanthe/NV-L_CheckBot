@@ -1,5 +1,6 @@
 from locators.page_locators import PageLocators
 from pages.base_page import BasePage
+from selenium.webdriver.common.by import By
 
 
 class GeneralMethods(BasePage):
@@ -40,6 +41,19 @@ class GeneralMethods(BasePage):
             current_url = datafile.cell(row=i, column=3).value
             self.open(current_url)
             current_locator = self.get_locator(current_url)
+            price = self.get_price(current_locator)
+            result_data.append([company_name, goods_name, price, current_url])
+        return result_data
+
+    def get_data_with_css_selector(self, datafile, result_data):
+        for i in range(2, datafile.max_row + 1):
+            company_name = datafile.cell(row=i, column=1).value
+            goods_name = datafile.cell(row=i, column=2).value
+            current_url = datafile.cell(row=i, column=3).value
+            current_css_selector = datafile.cell(row=i, column=4).value
+            print(current_css_selector)
+            current_locator = (By.CSS_SELECTOR, current_css_selector)
+            self.open(current_url)
             price = self.get_price(current_locator)
             result_data.append([company_name, goods_name, price, current_url])
         return result_data

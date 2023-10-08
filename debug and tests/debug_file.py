@@ -89,8 +89,12 @@ def test_get_price():
         current_price = ''
 
         for char in price_from_site:
-            if char.isdigit() or char == ',':
+            if char.isdigit() or char == ',' or char == '-':
                 current_price = current_price + char
+        if '-00' in current_price:
+            current_price = current_price.replace('-00', '')
+        if ',00' in current_price:
+            current_price = current_price.replace(',00', '')
         return current_price
 
 
