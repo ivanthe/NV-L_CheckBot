@@ -83,3 +83,18 @@ def test_sort():
     xlsx_process.format_the_resulting_table(result_list)
 
     result_workbook.save('debug.xlsx')
+
+def test_get_price():
+    def change_str_to_num(price_from_site):
+        current_price = ''
+
+        for char in price_from_site:
+            if char.isdigit() or char == ',':
+                current_price = current_price + char
+        return current_price
+
+
+    price_from_site = 'asdfsdfa 20 000,00 adf'
+    price = change_str_to_num(price_from_site)
+
+    print(price)
