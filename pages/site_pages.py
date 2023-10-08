@@ -30,8 +30,12 @@ class GeneralMethods(BasePage):
         current_price = ''
 
         for char in price_from_site:
-            if char.isdigit():
+            if char.isdigit() or char == ',' or char == '-':
                 current_price = current_price + char
+        if '-00' in current_price:
+            current_price = current_price.replace('-00', '')
+        if ',00' in current_price:
+            current_price = current_price.replace(',00', '')
         return current_price
 
     def get_data(self, datafile, result_data):
@@ -55,5 +59,5 @@ class GeneralMethods(BasePage):
             current_locator = (By.CSS_SELECTOR, current_css_selector)
             self.open(current_url)
             price = self.get_price(current_locator)
-            result_data.append([company_name, goods_name, price, current_url])
+            result_data.append([company_name, goods_name, int(price), current_url])
         return result_data
