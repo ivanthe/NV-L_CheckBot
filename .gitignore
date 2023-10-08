@@ -4,3 +4,4 @@ __pycache__/
 venv/
 driver/
 tests/*.xlsx
+debug and tests/debug*

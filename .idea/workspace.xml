@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d6ca1969-6539-4fd2-8f7f-be0059a5dd65" name="Changes" comment="" />
+=======
+    <list default="true" id="d6ca1969-6539-4fd2-8f7f-be0059a5dd65" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug and tests/debug_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug and tests/debug_file.py" afterDir="false" />
+    </list>
+>>>>>>> temp_branch
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +40,11 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+=======
+    &quot;git-widget-placeholder&quot;: &quot;temp__branch&quot;,
+>>>>>>> temp_branch
     &quot;last_opened_file_path&quot;: &quot;C:/Users/User/QATEST/NV-L_CheckBot&quot;
   }
 }</component>
@@ -43,36 +54,50 @@
       <recent name="C:\Users\User\QATEST\NV-L_CheckBot\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_main_file.Test_Main.test_get_price">
-    <configuration name="Python tests for test_main_file.Test_Main.test_get_price" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for debug_file.test_get_price">
+    <configuration name="Python tests for debug_file.test_debug" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="NV-L_CheckBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/debug and tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_main_file.Test_Main.test_get_price&quot;" />
+      <option name="_new_target" value="&quot;debug_file.test_debug&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_tagler_brand.Test_MM_135_Stirrer.test_debug" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for debug_file.test_get_price" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="NV-L_CheckBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/debug and tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_tagler_brand.Test_MM_135_Stirrer.test_debug&quot;" />
+      <option name="_new_target" value="&quot;debug_file.test_get_price&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_tagler_brand.Test_MM_135_Stirrer.test_defender_3_15C" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for debug_file.test_sort" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="NV-L_CheckBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/debug and tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;debug_file.test_sort&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_main_file.TestMain.test_debug" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="NV-L_CheckBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,7 +107,21 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_tagler_brand.Test_MM_135_Stirrer.test_defender_3_15C&quot;" />
+      <option name="_new_target" value="&quot;test_main_file.TestMain.test_debug&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_main_file.TestMain.test_get_price" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="NV-L_CheckBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_main_file.TestMain.test_get_price&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -97,58 +136,16 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;tests.test_main_file&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for tests.test_main_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="NV-L_CheckBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_main_file&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for tests.test_main_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="NV-L_CheckBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_main_file&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for tests.test_main_file.Test_Main.test_get_price" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="NV-L_CheckBot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_main_file.Test_Main.test_get_price&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_main_file.Test_Main.test_get_price" />
-        <item itemvalue="Python tests.Python tests for tests.test_main_file.Test_Main.test_get_price" />
-        <item itemvalue="Python tests.Python tests for tests.test_main_file" />
-        <item itemvalue="Python tests.Python tests for tests.test_main_file" />
-        <item itemvalue="Python tests.Python tests for tests.test_main_file" />
+        <item itemvalue="Python tests.Python tests for debug_file.test_get_price" />
+        <item itemvalue="Python tests.Python tests for test_main_file.TestMain.test_get_price" />
+        <item itemvalue="Python tests.Python tests for debug_file.test_sort" />
+        <item itemvalue="Python tests.Python tests for test_main_file.TestMain.test_debug" />
+        <item itemvalue="Python tests.Python tests for debug_file.test_debug" />
       </list>
     </recent_temporary>
   </component>
