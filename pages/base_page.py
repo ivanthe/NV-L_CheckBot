@@ -29,5 +29,5 @@ class BasePage:
     def element_is_clickable(self, locator, timeout=5):
         return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
-    def go_to_element(self, element):
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+    def go_to_element(self, locator):
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", locator)

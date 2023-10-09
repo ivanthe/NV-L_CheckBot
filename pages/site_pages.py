@@ -7,6 +7,7 @@ class GeneralMethods(BasePage):
     locator = PageLocators
 
     def get_price(self, locator):
+        #self.go_to_element(self.element_is_present(locator))
         price_from_site = self.element_is_present(locator).text
         price = self.change_str_to_num(price_from_site)
         return price
@@ -38,7 +39,7 @@ class GeneralMethods(BasePage):
             current_price = current_price.replace(',00', '')
         return current_price
 
-    def get_data(self, datafile, result_data):
+    """def get_data(self, datafile, result_data):
         for i in range(2, datafile.max_row+1):
             company_name = datafile.cell(row=i, column=1).value
             goods_name = datafile.cell(row=i, column=2).value
@@ -47,15 +48,14 @@ class GeneralMethods(BasePage):
             current_locator = self.get_locator(current_url)
             price = self.get_price(current_locator)
             result_data.append([company_name, goods_name, price, current_url])
-        return result_data
+        return result_data"""
 
-    def get_data_with_css_selector(self, datafile, result_data):
+    def get_data(self, datafile, result_data):
         for i in range(2, datafile.max_row + 1):
             company_name = datafile.cell(row=i, column=1).value
             goods_name = datafile.cell(row=i, column=2).value
             current_url = datafile.cell(row=i, column=3).value
             current_css_selector = datafile.cell(row=i, column=4).value
-            print(current_css_selector)
             current_locator = (By.CSS_SELECTOR, current_css_selector)
             self.open(current_url)
             price = self.get_price(current_locator)
