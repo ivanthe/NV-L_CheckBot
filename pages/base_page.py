@@ -1,3 +1,4 @@
+import requests
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -10,6 +11,9 @@ class BasePage:
 
     def open(self, url):
         self.driver.get(url)
+
+    def check_link_status_code(self, url):
+        return requests.get(url).status_code
 
     def element_is_visible(self, locator, timeout=5):
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))

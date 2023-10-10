@@ -24,6 +24,12 @@ def default_row_style():
         font_color='FFFFFF'
     )
 
+def error_row_style():
+    yield FontStyle(
+        font_size=12,
+        font_bold=False,
+        font_color='FF0000'
+    )
 
 def first_row_border_style():
     yield BorderStyle(

@@ -1,6 +1,7 @@
 from locators.page_locators import PageLocators
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
 
 
 class GeneralMethods(BasePage):
@@ -8,8 +9,11 @@ class GeneralMethods(BasePage):
 
     def get_price(self, locator):
         #self.go_to_element(self.element_is_present(locator))
-        price_from_site = self.element_is_present(locator).text
-        price = self.change_str_to_num(price_from_site)
+        try:
+            price_from_site = self.element_is_present(locator).text
+            price = self.change_str_to_num(price_from_site)
+        except TimeoutException:
+            return 'Error'
         return price
 
     def get_locator(self, url):
@@ -58,6 +62,20 @@ class GeneralMethods(BasePage):
             current_css_selector = datafile.cell(row=i, column=4).value
             current_locator = (By.CSS_SELECTOR, current_css_selector)
             self.open(current_url)
-            price = self.get_price(current_locator)
-            result_data.append([company_name, goods_name, int(price), current_url])
+            status_code = self.check_link_status_code(current_url)
+            if status_code == 404:
+                message = f'Ошибка {status_code} для ссылки {current_url}'
+                result_data.append([company_name, goods_name, -100500, message])
+                print(message)
+            else:
+                price = self.get_price(current_locator)
+                if price == 'Error':
+                    message = f'Ошибка подбора CSS Selector\nдля ссылки {current_url}\n или ссылка ' \
+                              f'не на карточку товара'
+                    result_data.append([company_name, goods_name, -100400, message])
+                    print(message)
+                elif price == '':
+                    result_data.append([company_name, goods_name, 0, current_url])
+                else:
+                    result_data.append([company_name, goods_name, int(price), current_url])
         return result_data

@@ -1,5 +1,5 @@
 from data.styles import first_row_style, first_row_border_style, nv_lab_row_style, default_row_border_style, \
-    default_row_style
+    default_row_style, error_row_style
 from pages.xlsx_proccessing import XlsxProccessing
 
 
@@ -23,11 +23,21 @@ class ResultingTableMethods(XlsxProccessing):
 
         for i in range(2, result_list.max_row+1):
 
-            if result_list[i][0].value == 'НВ-Лаб':
+            if result_list[i][0].value == 'НВ-Лаб' and result_list[i][2].value >= 0:
                 font_style = next(nv_lab_row_style())
                 border_style = next(default_row_border_style())
                 self.format_row(font_style, border_style, result_list[i])
-            else:
+                if result_list[i][2].value == 0:
+                    result_list[i][2].value = 'ПО ЗАПРОСУ'
+            elif result_list[i][0].value != 'НВ-Лаб' and result_list[i][2].value >= 0:
                 font_style = next(default_row_style())
                 border_style = next(default_row_border_style())
                 self.format_row(font_style, border_style, result_list[i])
+                if result_list[i][2].value == 0:
+                    result_list[i][2].value = 'ПО ЗАПРОСУ'
+            elif result_list[i][2].value < 0:
+                font_style = next(error_row_style())
+                border_style = next(default_row_border_style())
+                self.format_row(font_style, border_style, result_list[i])
+                result_list[i][2].value = 'ОШИБКА'
+                print(result_list[i][2].value)
