@@ -17,3 +17,7 @@ class XlsxProccessing:
             cell.alignment = Alignment(horizontal=border_style.cell_alignment_horizontal,
                                        vertical=border_style.cell_alignment_vertical)
             cell.border = Border(top=line, bottom=line, left=line, right=line)
+    @staticmethod
+    def format_cell(color=None, cell=None):
+        cell.fill = PatternFill('solid', fgColor=color)
+

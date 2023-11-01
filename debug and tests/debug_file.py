@@ -1,3 +1,4 @@
+import openpyxl
 from openpyxl.workbook import Workbook
 
 from pages.data_methods import DataMethods
@@ -101,16 +102,61 @@ def test_get_price():
         current_price = ''
 
         for char in price_from_site:
-            if char.isdigit() or char == ',' or char == '-':
+            if char.isdigit() or char == ',' or char == '-' or char == '.':
                 current_price = current_price + char
-        if '-00' in current_price:
+
+        current_price = current_price.replace(',', '.')
+        current_price = current_price.replace('-', '.')
+
+        print('первый символ ', current_price)
+
+        while current_price[0] == '.':
+            print(current_price)
+            current_price = current_price[1:]
+
+        while current_price[-1] == '.':
+            print(current_price)
+            current_price = current_price[:-1]
+
+
+        """if '-00' in current_price:
             current_price = current_price.replace('-00', '')
         if ',00' in current_price:
-            current_price = current_price.replace(',00', '')
+            current_price = current_price.replace(',00', '')"""
         return current_price
 
 
-    price_from_site = 'asdfsdfa 20 000,00 adf'
+    price_from_site = 'цена.....,,,,, 20 000-25 руб.'
     price = change_str_to_num(price_from_site)
 
-    print(price)
+    print('ИТОГ ', price)
+    print(2.5+2.5)
+
+def test_find_target_price():
+    data_one = [['НВ-Лаб', 'Альтаир 200', 89100],
+                ['Экохим', 'Альтаир 200', 127500],
+                ['Промэколаб', 'Альтаир 200', 153000],
+                ['Промэколаб', 'Альтаир 200', 99800],
+                ['Прайм', 'Альтаир 300', 80325]]
+
+    for c in data_one:
+        if "НВ-Лаб" in c:
+            c.append(1)
+            min_price = c[2]
+            print(c)
+            print('минимальная цена: ', min_price)
+
+
+def test_get_locator(url='https://www.nv-lab.ru/catalog_info.php?ID=1493'):
+
+    site_title = url.split('://')[-1].split('/')[0]
+    locators_dict = openpyxl.load_workbook("select_dict.xlsx")
+    locators_dict_sheet = locators_dict.active
+    index = 0
+    for i in range(1, locators_dict_sheet.max_row + 1):
+        site_name = locators_dict_sheet.cell(row=i, column=1).value
+        locator = locators_dict_sheet.cell(row=i, column=2).value
+        if site_name in site_title:
+            site_locator = locator
+            index = index + 1
+            print(site_locator)
