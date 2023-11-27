@@ -23,8 +23,13 @@ class DataMethods(DataProcessing):
     def get_resulting_data(resulting_data, temporary_data, target_price):
         data = resulting_data
         for row in temporary_data:
-            price_deviation = (row[4] - target_price)*100/target_price
-            row.append(price_deviation)
+            try:
+                price_deviation = (row[4] - target_price)*100/target_price
+
+            except ZeroDivisionError:
+                row.append(0)
+            else:
+                row.append(price_deviation)
             data.append(row)
 
         return data
@@ -34,7 +39,7 @@ class DataMethods(DataProcessing):
         data = []
         for row in resulting_data:
             site_title = row[5].split('://')[-1].split('/')[0]
-            data.append([row[0], site_title, row[3], row[4], row[6], row[5]])
+            data.append([row[0], site_title, row[3], row[4], row[6], row[5], row[1]])
         return data
 
     @staticmethod

@@ -1,9 +1,12 @@
+import random
+import time
+
 import openpyxl
 
 from locators.page_locators import PageLocators
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, InvalidSelectorException
 
 
 class GeneralMethods(BasePage):
@@ -16,23 +19,21 @@ class GeneralMethods(BasePage):
             price = self.change_str_to_num(price_from_site)
         except TimeoutException:
             return 'Error'
+        except InvalidSelectorException:
+            return 'Error'
         return price
 
     def get_locator(self, url):
         site_title = url.split('://')[-1].split('/')[0]
         locators_dict = openpyxl.load_workbook("select_dict.xlsx")
         locators_dict_sheet = locators_dict.active
-        counter = 0
         site_locator = ''
+        print('Получаем локатор после сплита ', site_title)
         for i in range(1, locators_dict_sheet.max_row):
             site_name = locators_dict_sheet.cell(row=i, column=1).value
             locator = locators_dict_sheet.cell(row=i, column=2).value
             if site_name in site_title:
                 site_locator = locator
-                counter = counter + 1
-            if counter == 0:
-                print(f'Для сайта {site_title} в словаре нет подходящих локаторов')
-                counter = 0
         return site_locator
 
     @staticmethod
@@ -43,16 +44,27 @@ class GeneralMethods(BasePage):
             if char.isdigit() or char == ',' or char == '-' or char == '.':
                 current_price = current_price + char
 
+        print('Текущая цена    -    ', current_price)
+
         current_price = current_price.replace(',', '.')
         current_price = current_price.replace('-', '.')
+
+        print('Текущая цена после удаления точек и тире   -    ', current_price)
 
         while current_price[0] == '.':
             print(current_price)
             current_price = current_price[1:]
 
-        while current_price[-1] == '.':
-            print(current_price)
-            current_price = current_price[:-1]
+        is_float = False
+        while not is_float:
+            try:
+                current_price = float(current_price)
+            except ValueError:
+                is_float = False
+                current_price = current_price[:-1]
+            else:
+                is_float = True
+
         return current_price
 
 
@@ -71,6 +83,7 @@ class GeneralMethods(BasePage):
 
             current_locator = (By.CSS_SELECTOR, current_css_selector)
             self.open(current_url)
+            time.sleep(random.randint(3, 5))  # на некоторых сайтах цена подгружается после загрузки нужного элемента
             status_code = self.check_link_status_code(current_url)
 
 

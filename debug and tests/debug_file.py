@@ -114,9 +114,23 @@ def test_get_price():
             print(current_price)
             current_price = current_price[1:]
 
-        while current_price[-1] == '.':
+        """while current_price[-1] == '.':
             print(current_price)
-            current_price = current_price[:-1]
+            current_price = current_price[:-1]"""
+
+
+
+        is_float = False
+        while not is_float:
+            print('из флот  ', is_float)
+            try:
+                current_price = float(current_price)
+            except ValueError:
+                is_float = False
+                current_price = current_price[:-1]
+                print('Печать из ТРАЯ:   ', current_price)
+            else:
+                is_float = True
 
 
         """if '-00' in current_price:
@@ -126,11 +140,14 @@ def test_get_price():
         return current_price
 
 
-    price_from_site = 'цена.....,,,,, 20 000-25 руб.'
+    price_from_site = '239 958 руб. с НДС 20%'
     price = change_str_to_num(price_from_site)
 
     print('ИТОГ ', price)
     print(2.5+2.5)
+    print(2.5 + 2.5)
+    print(2.5 + 2.5)
+    print(2.5 + 2.5)
 
 def test_find_target_price():
     data_one = [['НВ-Лаб', 'Альтаир 200', 89100],

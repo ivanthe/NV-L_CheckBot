@@ -20,6 +20,7 @@ class ResultingTableMethods(XlsxProccessing):
         self.xlxs_list.column_dimensions['C'].width = border_style.cell_width * 1.5
         self.xlxs_list.column_dimensions['D'].width = border_style.cell_width
         self.xlxs_list.column_dimensions['E'].width = border_style.cell_width * 0.75
+        self.xlxs_list.column_dimensions['F'].width = border_style.cell_width * 1.75
         self.xlxs_list.row_dimensions[1].height = border_style.cell_height
 
         for i in range(2, result_list.max_row+1):
