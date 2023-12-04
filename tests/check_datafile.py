@@ -1,8 +1,3 @@
-import sys
-
-import openpyxl
-import xlwt
-
 
 class CheckLocators:
 
@@ -16,9 +11,7 @@ class CheckLocators:
 
         for i in range(2, datafile_sheet.max_row):
             url = datafile_sheet.cell(row=i, column=5).value
-            print('ПОЛУЧИЛИ', url)
             site_title = url.split('://')[-1].split('/')[0]
-            print('Это прошли')
 
             if 'www.' in site_title:
                 site_title = site_title.split('www.')[-1]

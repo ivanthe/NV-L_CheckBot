@@ -1,4 +1,4 @@
-from data.data import FontStyle, BorderStyle
+from data.data import FontStyle, BorderStyle, ResultingTableFields
 
 
 def first_row_style():
@@ -24,12 +24,14 @@ def default_row_style():
         font_color='FFFFFF'
     )
 
+
 def error_row_style():
     yield FontStyle(
         font_size=12,
         font_bold=False,
         font_color='FF0000'
     )
+
 
 def first_row_border_style():
     yield BorderStyle(
@@ -50,4 +52,15 @@ def default_row_border_style():
         cell_border_color="000000",
         cell_alignment_horizontal='center',
         cell_alignment_vertical='center'
+    )
+
+
+def resulting_table_fields_name():
+    yield ResultingTableFields(
+        field_1='code',
+        field_2='Company_name',
+        field_3='Good_category',
+        field_4='Goods_name',
+        field_5='Price',
+        field_6='Price_deviation',
     )

@@ -18,84 +18,57 @@ def test_debug():
         if row[0] == 'НВ-Лаб':
             print(row[1], ' стоит ', row[2], ' руб.')
 
-def test_sort():
-    data_one = [['НВ-Лаб', 'Альтаир 200', 89100],
-                ['Экохим', 'Альтаир 200', 127500],
-                ['Промэколаб', 'Альтаир 200', 153000],
-                ['Промэколаб', 'Альтаир 200', 99800],
-                ['НВ-Лаб', 'Альтаир 300', 127670],
-                ['Прайм', 'Альтаир 300', 80325],
-                ['Прайм', 'Альтаир 300', 122010],
-                ['Экохим', 'Альтаир 300', 185300],
-                ['ЗОМЗ', 'Альтаир 300', 129680],
-                ['Электронприбор', 'Альтаир 300', 220000],
-                ['Электронприбор', 'Альтаир 300', 187000],
-                ['Промэколаб', 'Альтаир 300', 143000],
-                ['НВ-Лаб', 'Альтаир 300УФ', 212930],
-                ['Прайм', 'Альтаир 300УФ', 154350],
-                ['Прайм', 'Альтаир 300УФ', 225225],
-                ['Экохим', 'Альтаир 300УФ', 283900],
-                ['Электронприбор', 'Альтаир 300УФ', 374000],
-                ['Эковью', 'Альтаир 300УФ', 238500],
-                ['НОВАПРИБОР', 'Альтаир 300УФ', 176000]]
 
+def test_sort_list_last() -> list:
+    data_from_pages = [[111, 'автоклав', 'Главмедпроект', "BES-22L-B-LCD", 110000,
+                        'https://glavmedproject.ru/product/bes-22l-b-lcd-youjoy-bes-22l-b-lcd-youjoy/'],
+                       [75441, 'автоклав', 'НВ-Лаб', 'BES-22L-B-LCD', 160000,
+                        'https://www.nv-lab.ru/catalog_info.php?ID=2881'],
+                       [7415411, 'автоклав', 'АйТиСтом', 'BES-22L-B-LCD', 200000,
+                        'https://itstom.ru/sterilizaciya/avtoklavy/avtoklav-bes-22l-b-lcd/'],
+                       [7415411, 'фотометр', 'НВ-Лаб', 'КФК-3', -100500,
+                        'https://www.nv-lab.ru/catalog'],
+                       [7415411, 'фотометр', 'АйТиСтом', 'КФК-3', 230000,
+                        'https://itstom.ru/sterilizaciya/avtoklavy/avtoklav-bes-22l-b-lcd/'],
+                       [7415411, 'фотометр', 'Промэколаб', 'КФК-3', 190000,
+                        'https://itstom.ru/sterilizaciya/avtoklavy/avtoklav-bes-22l-b-lcd/'],
+                       [7415411, 'фотометр', 'Промэколаб', 'КФК-3', 32333,
+                        'https://itstom.ru/sterilizaciya/avtoklavy/avtoklav-bes-22l-b-lcd/'],
+                       [7415411, 'Стерилизатор', 'АйТиСтом', 'ГК-25', 230000,
+                        'https://itstom.ru/sterilizaciya/avtoklavy/avtoklav-bes-22l-b-lcd/'],
+                       [7415411, 'Стерилизатор', 'НВ-Лаб', 'ГК-25', 190000,
+                        'https://itstom.ru/sterilizaciya/avtoklavy/avtoklav-bes-22l-b-lcd/'],
+                       ]
 
-    process = DataMethods(data_one)
-    data = process.sort_list(data_one)
-    print("")
-
-    def takeSecond(elem):
-        return elem[1]
-    def takeThird(elem):
-        return elem[2]
-
-
-    def get_number_of_items_in_list(cell_value, current_data):
-        b = 0
-        for cell in current_data:
-            if cell_value in cell:
-                b += 1
-        return b
-
-    def get_list_of_tempory_data(list_size, current_data):
-        data = []
-        for c in range(0, list_size):
-            data.append(current_data.pop(0))
-        return data, current_data
-
-    data.sort(key=takeSecond)
-    for row in data:
+    data_from_pages.sort(key=lambda sort_column: sort_column[1])
+    for row in data_from_pages:
         print(row)
 
-    def get_resulting_data(resulting_data, current_data):
-        data = resulting_data
-        for row in current_data:
-            data.append(row)
-        return data
-
-    data_temp = data
+    data_temp = data_from_pages
     resulting_data = []
 
     while data_temp != []:
         value = data_temp[0][1]
-        value_qty = get_number_of_items_in_list(value, data_temp)
-        tempory_data, data_temp = get_list_of_tempory_data(value_qty, data_temp)
-        tempory_data.sort(key=takeThird)
-        resulting_data = get_resulting_data(resulting_data, tempory_data)
-        tempory_data.clear()
 
-    print('Финальная таблица')
-    for row in resulting_data:
+
+        value_qty = DataMethods.get_number_of_items_in_list(value, data_temp)
+        temporary_data, data_temp = DataMethods.get_list_of_temporary_data(value_qty, data_temp)
+        temporary_data.sort(key=lambda sort_column: sort_column[4])
+        target_price = DataMethods.find_target_price(temporary_data)
+        resulting_data = DataMethods.get_resulting_data(resulting_data, temporary_data, target_price)
+
+        print(value)
+        print(value_qty)
+        for row in temporary_data:
+            print(row)
+
+        temporary_data.clear()
+
+    final_data = DataMethods.get_final_data(resulting_data)
+
+    print('Печатаем финальные данные: \n')
+    for row in final_data:
         print(row)
-
-    result_workbook = Workbook()
-    result_list = result_workbook.active
-
-    xlsx_process = ResultingTableMethods(result_list)
-    xlsx_process.create_first_row_of_resulting_table(result_list, resulting_data)
-    xlsx_process.format_the_resulting_table(result_list)
-
-    result_workbook.save('debug.xlsx')
 
 def test_get_price():
     def change_str_to_num(price_from_site):

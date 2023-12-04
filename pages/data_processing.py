@@ -1,5 +1,5 @@
 
 class DataProcessing:
 
-    def __init__(self, current_data):
-        self.current = current_data
+    def __init__(self, data_from_pages):
+        self.data_from_pages = data_from_pages

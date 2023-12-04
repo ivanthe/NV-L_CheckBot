@@ -13,22 +13,10 @@ def driver():
     driver.maximize_window()
     yield driver
     driver.quit()"""
-
 @pytest.fixture
 def driver():
-    driver = uc.Chrome(headless=False, use_subprocess=False)
+    driver = uc.Chrome(headless=True, use_subprocess=False)
     driver.maximize_window()
     yield driver
     driver.close()
     driver.quit()
-
-"""def drivers():
-
-    driver = uc.Chrome(headless=False, use_subprocess=False)
-    driver.get('https://nowsecure.nl')
-    time.sleep(20)
-    driver.close()
-    driver.quit()
-
-if __name__ == "__main__":
-    drivers()"""
